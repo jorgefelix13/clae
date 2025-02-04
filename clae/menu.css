@@ -1,0 +1,51 @@
+/*
+GLOBALES
+*/
+
+:root {
+    --guindo: #691532;
+    --dorado: #C9A863;
+    --gris: #bdaeae;
+    --fondo: #dbd5d5;
+    --negro: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--fondo);
+}
+
+
+/*
+---BARRA DE NAVEGACION
+*/
+
+nav {
+    background-color: var(--guindo);
+    padding: 17px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: var(--dorado);
+}
+
+nav a:hover {
+    padding: 3px 7px;
+    background-color: #500f26;
+    border-radius: 10px;
+    transition-duration: 100ms ;
+}
+
+nav a:not(:hover)
+{
+    transition-duration: 100ms;
+}
+
+

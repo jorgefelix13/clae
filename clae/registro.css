@@ -1,0 +1,82 @@
+:root {
+  --guindo: #691532;
+  --dorado: #C9A863;
+  --fondo: #dbd5d5;
+  --gris-oscuro: #333;
+  --borde: #ddd;
+}
+
+body {
+  background-color: var(--fondo);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  width: 100%;
+  background-color: var(--guindo);
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+.contenedor {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  min-width: 400px;
+  text-align: center;
+} 
+
+h1 {
+  color: var(--guindo);
+}
+
+.campo {
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+}
+
+label {
+  font-weight: bold;
+  color: var(--gris-oscuro);
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid var(--borde);
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--guindo);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--dorado);
+  color: var(--gris-oscuro);
+}

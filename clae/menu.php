@@ -36,23 +36,9 @@ $menu = $menu_opciones[$rol_actual];
 <head>
     <meta charset="UTF-8">
     <title>Menú</title>
+    <link rel="stylesheet" href="menu.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        nav a:hover {
-            color: #007BFF;
-        }
+       
     </style>
 </head>
 <body>

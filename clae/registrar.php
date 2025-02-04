@@ -26,43 +26,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
     <title>Registro</title>
 </head>
+
 <body>
-    <h1>Formulario de Registro</h1>
-    <form method="post" action="">
-        <label for="reg_clave">Clave:</label>
-        <input type="text" id="reg_matricula" name="reg_matricula" required><br><br>
+    <div class="contenedor">
+        <h1>Formulario de Registro</h1>
+        <form method="post" action="">
+            <div class="campo">
+                <label for="reg_matricula">Clave:</label>
+                <input type="text" id="reg_matricula" name="reg_matricula" required>
+            </div>
+            <div class="campo">
+                <label for="reg_carrera">Carrera:</label>
+                <select id="reg_carrera" name="reg_carrera" required>
+                    <option value="Sistemas Computacionales">Sistemas Computacionales</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Ingeniería de Software">Ingeniería de Software</option>
+                    <option value="Psicología">Psicología</option>
+                    <option value="Nutrición">Nutrición</option>
+                    <option value="Educación Física">Educación Física</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="reg_nombre">Nombre:</label>
+                <input type="text" id="reg_nombre" name="reg_nombre" required>
+            </div>
+            <div class="campo">
+                <label for="reg_apellidop">Apellido Paterno:</label>
+                <input type="text" id="reg_apellidop" name="reg_apellidop" required>
+            </div>
+            <div class="campo">
+                <label for="reg_apellidom">Apellido Materno:</label>
+                <input type="text" id="reg_apellidom" name="reg_apellidom" required>
+            </div>
+            <div class="campo">
+                <label for="reg_correo">Correo:</label>
+                <input type="email" id="reg_correo" name="reg_correo" required>
+            </div>
+            <div class="campo">
+                <label for="reg_telefono">Teléfono:</label>
+                <input type="text" id="reg_telefono" name="reg_telefono" required>
+            </div>
+            <div class="boton-container">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
 
-        <label for="reg_carrera">Carrera:</label>
-        <select id="reg_carrera" name="reg_carrera" required>
-            <option value="Sistemas Computacionales">Sistemas Computacionales</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Ingeniería de Software">Ingeniería de Software</option>
-            <option value="Psicología">Psicología</option>
-            <option value="Nutrición">Nutrición</option>
-            <option value="Educación Física">Educación Física</option>
-        </select><br><br>
-
-        <label for="reg_nombre">Nombre:</label>
-        <input type="text" id="reg_nombre" name="reg_nombre" required><br><br>
-
-        <label for="reg_apellidop">Apellido Paterno:</label>
-        <input type="text" id="reg_apellidop" name="reg_apellidop" required><br><br>
-
-        <label for="reg_apellidom">Apellido Materno:</label>
-        <input type="text" id="reg_apellidom" name="reg_apellidom" required><br><br>
-
-        <label for="reg_correo">Correo:</label>
-        <input type="email" id="reg_correo" name="reg_correo" required><br><br>
-
-        <label for="reg_telefono">Teléfono:</label>
-        <input type="text" id="reg_telefono" name="reg_telefono" required><br><br>
-
-        <button type="submit">Registrar</button>
-    </form>
 </body>
+
 </html>

@@ -43,17 +43,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <link rel="stylesheet" href="inicio.css">
     <meta charset="UTF-8">
     <title>Inicio de Sesión</title>
 </head>
+
 <body>
     <form method="POST" action="">
-        <h2>Iniciar Sesión</h2>
-        <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-        <input type="text" name="username" placeholder="Usuario" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit">Iniciar Sesión</button>
+
+        <div class="encabezado">
+            <div class="logo">
+                <img src="http://localhost/clae/Imagenes/Logo_Uadeo.png" alt="Logo de la Uadeo">
+                <h1>Sistema de Citas UAdeO</h1>
+            </div>
+        </div>
+
+        <div class="caja">
+            <div class="login">
+                <h2>Iniciar Sesión</h2>
+                <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+                <div>
+                    <div>
+                        <input type="text" name="username" placeholder="Usuario" required>
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                </div>
+                <div class="boton">
+                    <button type="submit">Iniciar Sesión</button>
+                </div>
+            </div>
+
+        </div>
+
     </form>
 </body>
+
 </html>
