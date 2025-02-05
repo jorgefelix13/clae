@@ -39,7 +39,9 @@ if (isset($_POST['submit'])) {
     if ($resultCheck->num_rows > 0) {
         echo "<p class='error'>El horario seleccionado ya está ocupado. Por favor, elige otro.</p>";
     } else {
-        $sql = "INSERT INTO recepcionm (REC_Fecha, REC_Matricula, REC_Carrera, REC_Nombre, REC_Apellidos, REC_Area, REC_Horaini, REC_Horafin) VALUES ('$fecha', '$matricula', '$carrera', '$nombre', '$apellidos', '$area', '$fechaHora', DATE_ADD('$fechaHora', INTERVAL 30 MINUTE))";
+        $sql = "INSERT INTO recepcionm (REC_Fecha, REC_Matricula, REC_Carrera, REC_Nombre, REC_Area, REC_Horaini, REC_Horafin)
+        VALUES ('$fecha', '$matricula', '$carrera', '$nombre', '$area', '$fechaHora', DATE_ADD('$fechaHora', INTERVAL 30 MINUTE))";
+
 
         if ($conn->query($sql) === TRUE) {
             header('Location: agendar.php');
@@ -67,10 +69,10 @@ foreach ($agendaAreas as $area) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validar Matrícula y Agregar Registro</title>
     <link rel="stylesheet" href="agendar.css">
+    <script src="horarios.js"></script>
 </head>
 
 <body>
-    
 
     <main>
         <section class="search">
@@ -106,17 +108,25 @@ foreach ($agendaAreas as $area) {
                         <input type="text" name="REC_Apellidos" value="<?php echo $usuario['reg_apellidop'] . ' ' . $usuario['reg_apellidom']; ?>" required>
                     </div>
                     <div class="form-group">
+                        <label>Área:
+                            <select name="REC_Area" onchange="generarHorarios()" required>
+                                <option value="Nutricion">Nutrición</option>
+                                <option value="Medicina">Medicina</option>
+                                <option value="Psicologia">Psicología</option>
+                            </select>
+                        </label><br>
+                    </div>
+                    <div class="form-group">
                         <label>Fecha:</label>
                         <input type="date" name="REC_Fecha" required>
                     </div>
                     <div class="form-group">
-                        <label>Área:</label>
-                        <select name="REC_Area" required>
-                            <option value="Nutricion">Nutrición</option>
-                            <option value="Medicina">Medicina</option>
-                            <option value="Psicologia">Psicología</option>
-                        </select>
+                        <label>Horario:
+                            <select id="REC_Horario" name="REC_Horario" required>
+                            </select>
+                        </label><br>
                     </div>
+
                     <button type="submit" name="submit">Agregar</button>
                 </form>
             </section>
@@ -158,4 +168,5 @@ foreach ($agendaAreas as $area) {
         </section>
     </main>
 </body>
+
 </html>
